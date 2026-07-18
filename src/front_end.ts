@@ -1,3 +1,5 @@
+import {PORT} from "./config.js";
+
 type HTML_object = HTMLElement | null
 const heading :HTML_object= document.querySelector('h1') as HTML_object
 const button :HTML_object = document.querySelector('button') as HTML_object
@@ -9,7 +11,7 @@ const messageTextarea = document.getElementById('message') as HTMLTextAreaElemen
 button?.addEventListener(
     'click',
     () => {
-        fetch('http://localhost:3000/message')
+        fetch(`http://localhost:${PORT}/message`)
         .then( response => {
                 if (!response.ok){
                     throw new Error(`Server Error: ${response.status} ${response.statusText}`)
@@ -39,7 +41,7 @@ form?.addEventListener(
         const name = input_name?.value ?? ''
         const message = messageTextarea?.value ?? ''
 
-        fetch('http://localhost:3000/message',{
+        fetch(`http://localhost:${PORT}/message`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

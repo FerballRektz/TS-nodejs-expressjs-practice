@@ -6,17 +6,17 @@ import type { Application, Request, Response, NextFunction} from "express";
 import {ProductRouter} from "./products.js"
 import cors from "cors";
 
-// Always have this at start
-dotenv.config()
 
+dotenv.config()
+// Always have this at start
 const app  :Application = express();
 
 
-const PORT :number = Number(process.env.PORT) || 3000;
+export const PORT :number = Number(process.env.PORT) || 3000;
 
 //  Middleware, whenever a json is recived do this , always put it here
 app.use(cors({
-    origin:['http://localhost:3000','http://127.0.0.1:3001']
+    origin:[`http://localhost:${PORT}`,'http://127.0.0.1:3001']
     } 
 ))
 // CUSTOM MIDDLEWARE

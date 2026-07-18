@@ -4,3 +4,4 @@ dist/*.ts.map
 dist/*.d.ts
 dist/*.js.map
 dist/*.js 
+src/config.ts
