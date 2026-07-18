@@ -1,0 +1,3 @@
+This file is so you will not forget to create a dist file 
+
+see tsconfig.json for info (Outdir)
