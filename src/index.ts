@@ -16,7 +16,7 @@ export const PORT :number = Number(process.env.PORT) || 3000;
 
 //  Middleware, whenever a json is recived do this , always put it here
 app.use(cors({
-    origin:[`http://localhost:${PORT}`,'http://127.0.0.1:3001']
+    origin:[`http://localhost:${PORT}`,'http://127.0.0.1:3001',`http://localhost:3000`]
     } 
 ))
 // CUSTOM MIDDLEWARE
@@ -31,6 +31,7 @@ app.use(express.json())
 
 // specific routes should be always on top before generic patterns (look into product.ts)
 // Express Routes
+// Router from product.ts
 app.use('/products',ProductRouter)
 // Route 
 // 1. HTTP method

@@ -1,9 +1,9 @@
 import express from "express";
 import type {Router,Request, Response} from "express";
+
+
+// import router with export
 export const ProductRouter :Router = express.Router()
-
-
-
 // send a json response 
 interface JSON_object {
     id :number;
@@ -46,4 +46,5 @@ ProductRouter.post('/',(req :Request, res :Response) => {
     res.json({message: "New Product Added",product: newProduct})
 })
 
+// do this at every end of router file
 export default ProductRouter;
